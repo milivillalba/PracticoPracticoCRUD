@@ -1,0 +1,4 @@
+::ffff:127.0.0.1 - - [15/Sep/2023:15:31:17 +0000] "POST /auth/register HTTP/1.1" 200 224 "-" "Thunder Client (https://www.thunderclient.com)"
+::ffff:127.0.0.1 - - [15/Sep/2023:15:31:44 +0000] "GET /auth/login HTTP/1.1" 404 149 "-" "Thunder Client (https://www.thunderclient.com)"
+::ffff:127.0.0.1 - - [15/Sep/2023:15:31:53 +0000] "GET /auth/login/3 HTTP/1.1" 404 151 "-" "Thunder Client (https://www.thunderclient.com)"
+::ffff:127.0.0.1 - - [15/Sep/2023:15:32:00 +0000] "GET /auth/login/1 HTTP/1.1" 404 151 "-" "Thunder Client (https://www.thunderclient.com)"

@@ -33,19 +33,22 @@ export const ctrlRegisterUser = async (req, res) => {
 
 //este controlador  se va usar para validar el token
 export const ctrlGetUserInfoByToken = async (req, res) => {
-  const token = req.headers.authorization;
+  const token = req.headers.authorization; // busca el token de autorizacion en el encabezado "authorization"
 
   if (!token) {
     return res.sendStatus(404);
   }
-
+  //si se propociona el token se verifyca y decifra el token obteniendo el id del usuario
   const { user: userId } = Jwt.verify(token, environments.SECRET);
-
+  //utiliza la funcion getUserById para al usuario en la db
   const user = await getUserById(userId);
 
   if (!user) {
-    return res.sendStatus(401);
+    return res.sendStatus(401).json({ message: "No hay token en la peticion" });
   }
 
   res.status(200).json(user);
 };
+
+//este codigo se utiliza para autenticar a los usuarios a traves de tokens de autorizacion
+//verificar su identidad, y proporcionar información sobre el usuario autenticado

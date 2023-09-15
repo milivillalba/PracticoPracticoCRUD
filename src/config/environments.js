@@ -2,7 +2,7 @@ import "dotenv/config";
 
 export const environments = {
   PORT: process.env.PORT || 4800,
-  SECRET: process.env.SECRET || "ññññ",
+  SECRET: process.env.SECRET || "MV",
   DB: {
     DB_NAME: process.env.DB_NAME || "dbcrud",
     DB_HOST: process.env.DB_HOST || "localhost",

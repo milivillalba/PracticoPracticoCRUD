@@ -1,5 +1,6 @@
 import { sequelize } from "../config/db.js";
 import { DataTypes } from "sequelize";
+import { hashString } from "../helpers/hash.js";
 import bcrypt from "bcrypt";
 
 export const ROLES = {
@@ -25,6 +26,7 @@ export const UserModel = sequelize.define(
     },
     roles: {
       type: DataTypes.ENUM(ROLES.ADMIN, ROLES.USER),
+      allowNull: false,
     },
   },
   {

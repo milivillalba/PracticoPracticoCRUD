@@ -22,10 +22,11 @@ export const ctrlLoginUser = async (req, res) => {
 //Controller para el Registro
 export const ctrlRegisterUser = async (req, res) => {
   try {
-    const user = await createUser(res.body);
+    const user = await createUser(req.body);
     const token = await generarJWT({ user: user.id });
-    res.status(200).json(token);
+    res.status(200).json(user);
   } catch (error) {
+    console.error(error);
     res.sendStatus(500);
   }
 };
